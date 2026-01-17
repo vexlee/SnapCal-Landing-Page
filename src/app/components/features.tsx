@@ -14,6 +14,17 @@ const features = [
     ]
   },
   {
+    icon: Zap, // Using Zap for AI Coach as it represents speed/intelligence, or maybe Sparkles? Let's check imports.
+    title: "AI Health Coach",
+    description: "Your personal 24/7 wellness guide. Chat with CalCoach for personalized advice, motivation, and answers to your nutrition questions.",
+    color: "from-pink-500 to-rose-600",
+    features: [
+      "24/7 Chat support",
+      "Personalized advice",
+      "Smart suggestions"
+    ]
+  },
+  {
     icon: BarChart3,
     title: "Smart Dashboard",
     description: "Real-time progress tracking with dynamic visual indicators. Watch your intake change from green to orange to red as you approach your daily limit.",
@@ -22,6 +33,17 @@ const features = [
       "Real-time progress tracking",
       "7-day trend analysis",
       "Smart alert system"
+    ]
+  },
+  {
+    icon: Sparkles, // Using Sparkles for Workout as we don't have Dumbbell imported yet. I should import Dumbbell or Activity.
+    title: "Workout Integration",
+    description: "Seamlessly track your fitness alongside your nutrition. Create custom workout plans and track your sets, reps, and progress.",
+    color: "from-blue-500 to-indigo-600",
+    features: [
+      "Custom workout planner",
+      "Exercise library",
+      "Progress tracking"
     ]
   },
   {
@@ -60,8 +82,8 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     y: 0,
     transition: {
       duration: 0.5
@@ -74,7 +96,7 @@ export function Features() {
     <section id="features" className="py-20 px-6 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 left-1/4 w-64 h-64 bg-purple-500/20 rounded-full blur-[100px]"></div>
-      
+
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -83,7 +105,7 @@ export function Features() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          
+
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
             Everything You Need to{" "}
             <span className="bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent">

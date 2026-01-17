@@ -1,6 +1,5 @@
 import { motion } from "motion/react";
-import { Camera, Sparkles, CheckCircle } from "lucide-react";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { Camera, Sparkles, CheckCircle, ArrowRight } from "lucide-react";
 
 const steps = [
   {
@@ -8,50 +7,63 @@ const steps = [
     icon: Camera,
     title: "Snap or Describe",
     description: "Take a photo of your meal or simply type what you're eating. No database searching required.",
-    color: "from-purple-600 to-violet-600"
+    color: "from-purple-600 to-violet-600",
+    bg: "bg-purple-500/10",
+    border: "border-purple-500/20"
   },
   {
     number: "02",
     icon: Sparkles,
-    title: "AI Analyzes",
+    title: "AI Analyzing",
     description: "Google's Gemini AI instantly identifies ingredients, estimates portions, and calculates nutrition.",
-    color: "from-violet-600 to-fuchsia-600"
+    color: "from-violet-600 to-fuchsia-600",
+    bg: "bg-violet-500/10",
+    border: "border-violet-500/20"
   },
   {
     number: "03",
     icon: CheckCircle,
     title: "Review & Track",
     description: "Get your detailed ingredient receipt, make corrections if needed, and watch your progress.",
-    color: "from-emerald-500 to-teal-600"
+    color: "from-emerald-500 to-teal-600",
+    bg: "bg-emerald-500/10",
+    border: "border-emerald-500/20"
   }
 ];
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-20 px-6 relative overflow-hidden">
+    <section id="how-it-works" className="py-24 px-6 relative overflow-hidden bg-[#181920]">
       {/* Background decoration */}
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-violet-500/20 rounded-full blur-[120px]"></div>
-      
+      <div className="absolute top-1/2 left-1/4 w-[600px] h-[600px] bg-violet-500/5 rounded-full blur-[120px] -translate-y-1/2 pointer-events-none"></div>
+
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            How It{" "}
+          <div className="inline-block px-4 py-1.5 rounded-full border border-gray-700 bg-gray-800/50 text-gray-300 text-sm font-medium mb-6">
+            Simple Process
+          </div>
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+            From Photo to Macros in{" "}
             <span className="bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent">
-              Works
+              Seconds
             </span>
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Three simple steps to frictionless nutrition tracking
+            We've removed the friction from food tracking. No simpler way to stay on top of your nutrition.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+        {/* Steps Grid */}
+        <div className="grid lg:grid-cols-3 gap-8 relative">
+          {/* Connecting Line (Desktop) */}
+          <div className="hidden lg:block absolute top-12 left-[16%] right-[16%] h-0.5 bg-gradient-to-r from-purple-500/20 via-violet-500/20 to-emerald-500/20 -z-10"></div>
+
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
@@ -60,63 +72,42 @@ export function HowItWorks() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="relative"
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                className="relative group"
               >
-                <div className="text-center">
-                  <motion.div 
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    className={`inline-flex w-20 h-20 bg-gradient-to-br ${step.color} rounded-[28px] items-center justify-center mb-6 relative shadow-xl shadow-purple-500/30`}
-                  >
-                    <Icon className="w-10 h-10 text-white" />
-                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center shadow-lg">
-                      <span className="text-sm font-bold bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent">
+                <div className="relative flex flex-col items-center text-center">
+
+                  {/* Icon Hexagon/Circle Wrapper */}
+                  <div className="w-24 h-24 mb-8 relative">
+                    <div className={`absolute inset-0 bg-gradient-to-br ${step.color} opacity-20 blur-xl rounded-full group-hover:opacity-40 transition-opacity`}></div>
+                    <div className={`relative w-full h-full bg-[#1a1c26] border border-white/10 rounded-2xl flex items-center justify-center group-hover:scale-105 transition-transform duration-300 shadow-xl`}>
+                      <div className={`absolute -top-3 -right-3 w-8 h-8 rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center text-white font-bold text-sm shadow-lg`}>
                         {step.number}
-                      </span>
+                      </div>
+                      <Icon className="w-10 h-10 text-white" />
                     </div>
-                  </motion.div>
-                  <h3 className="text-2xl font-bold text-white mb-3">{step.title}</h3>
-                  <p className="text-gray-400 leading-relaxed">{step.description}</p>
-                </div>
-                {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-10 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-white/20 to-transparent">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: "100%" }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1, delay: index * 0.2 + 0.5 }}
-                      className={`h-full bg-gradient-to-r ${step.color}`}
-                    ></motion.div>
                   </div>
-                )}
+
+                  {/* Content Card */}
+                  <div className={`w-full p-8 rounded-3xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] transition-colors`}>
+                    <h3 className="text-2xl font-bold text-white mb-4">{step.title}</h3>
+                    <p className="text-gray-400 leading-relaxed text-sm">
+                      {step.description}
+                    </p>
+                  </div>
+
+                  {/* Mobile Connecting Arrow */}
+                  {index < steps.length - 1 && (
+                    <div className="lg:hidden my-6">
+                      <ArrowRight className="w-6 h-6 text-gray-600 rotate-90" />
+                    </div>
+                  )}
+                </div>
               </motion.div>
             );
           })}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="relative rounded-[32px] overflow-hidden shadow-2xl shadow-black/60 max-w-4xl mx-auto group"
-        >
-          <ImageWithFallback
-            src="https://images.unsplash.com/photo-1553813881-5e74278a18ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzbWFydHBob25lJTIwZm9vZCUyMHBob3RvfGVufDF8fHx8MTc2ODE1MDA0NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-            alt="Smartphone food photography"
-            className="w-full h-auto"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-          <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-            <div className="bg-black/40 backdrop-blur-xl border border-white/20 rounded-[24px] p-6">
-              <h3 className="text-2xl font-bold mb-2">See It In Action</h3>
-              <p className="text-gray-300 mb-4">Watch how SnapCal transforms a simple photo into detailed nutritional insights</p>
-              <button className="px-6 py-3 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-[20px] font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all">
-                Watch Demo Video
-              </button>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
