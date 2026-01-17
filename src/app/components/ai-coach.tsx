@@ -72,11 +72,7 @@ export function AiCoach() {
                         </div>
                     </div>
 
-                    <motion.div whileHover={{ x: 5 }}>
-                        <button className="flex items-center gap-2 text-white font-semibold transition-colors hover:text-purple-400">
-                            Learn more about CalCoach <ArrowRight className="w-4 h-4" />
-                        </button>
-                    </motion.div>
+
                 </motion.div>
 
                 {/* Right Side: Replicated App UI */}

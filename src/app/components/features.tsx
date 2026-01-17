@@ -107,13 +107,13 @@ export function Features() {
         >
 
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            Everything You Need to{" "}
+            Everything You Eat is{" "}
             <span className="bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent">
-              Eat Well
+              On Track
             </span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Leverage the power of Google's Gemini AI to transform how you track nutrition
+            Leverage the power of SnapCal AI to transform how you track nutrition
           </p>
         </motion.div>
 

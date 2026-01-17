@@ -169,12 +169,7 @@ export function WorkoutPlan() {
                         </div>
                     </div>
 
-                    <motion.button
-                        whileHover={{ x: 5 }}
-                        className="flex items-center gap-2 text-blue-400 font-semibold hover:text-blue-300 transition-colors"
-                    >
-                        Explore Workout Features <ArrowRight className="w-4 h-4" />
-                    </motion.button>
+
                 </motion.div>
 
             </div>
