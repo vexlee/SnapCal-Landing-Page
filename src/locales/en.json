@@ -1,0 +1,226 @@
+{
+    "header": {
+        "features": "Features",
+        "howItWorks": "How It Works",
+        "whySnapCal": "Why SnapCal",
+        "getStarted": "Get Started"
+    },
+    "hero": {
+        "badge": "Powered by Google Gemini AI",
+        "titlePrefix": "Snap & Track",
+        "description": "Your premium nutrition assistant that makes healthy eating effortless. Transform meals into insights with AI-powered intelligence.",
+        "stats": {
+            "meals": "Meals Analyzed",
+            "accuracy": "Accuracy Rate",
+            "users": "Active Users"
+        },
+        "analysis": {
+            "title": "Meal Analysis",
+            "protein": "Protein",
+            "carbs": "Carbs",
+            "fat": "Fat"
+        }
+    },
+    "features": {
+        "title": "Everything You Eat is",
+        "titleHighlight": "On Track",
+        "subtitle": "Leverage the power of SnapCal AI to transform how you track nutrition",
+        "items": {
+            "analysis": {
+                "title": "AI-Powered Food Analysis",
+                "description": "Instant photo recognition or natural text entry. SnapCal's AI identifies food items, breaks down ingredients, estimates portions, and calculates calories & macros.",
+                "list": [
+                    "Instant photo recognition",
+                    "Natural text entry",
+                    "Precision correction mode"
+                ]
+            },
+            "coach": {
+                "title": "AI Health Coach",
+                "description": "Your personal 24/7 wellness guide. Chat with CalCoach for personalized advice, motivation, and answers to your nutrition questions.",
+                "list": [
+                    "24/7 Chat support",
+                    "Personalized advice",
+                    "Smart suggestions"
+                ]
+            },
+            "dashboard": {
+                "title": "Smart Dashboard",
+                "description": "Real-time progress tracking with dynamic visual indicators. Watch your intake change from green to orange to red as you approach your daily limit.",
+                "list": [
+                    "Real-time progress tracking",
+                    "7-day trend analysis",
+                    "Smart alert system"
+                ]
+            },
+            "workout": {
+                "title": "Workout Integration",
+                "description": "Seamlessly track your fitness alongside your nutrition. Create custom workout plans and track your sets, reps, and progress.",
+                "list": [
+                    "Custom workout planner",
+                    "Exercise library",
+                    "Progress tracking"
+                ]
+            },
+            "recipe": {
+                "title": "Recipe & Meal Calculator",
+                "description": "Input ingredients and servings to get complete nutritional breakdown per serving—perfect for home cooks and meal preppers.",
+                "list": [
+                    "Recipe analysis",
+                    "Per-serving breakdown",
+                    "Meal prep optimization"
+                ]
+            },
+            "cloud": {
+                "title": "History & Cloud Sync",
+                "description": "Keep a detailed log of everything you've eaten, organized by date. Your data is securely stored and accessible anytime, anywhere.",
+                "list": [
+                    "Detailed food log",
+                    "Cloud synchronization",
+                    "Cross-device access"
+                ]
+            }
+        }
+    },
+    "howItWorks": {
+        "title": "From Photo to Macros in",
+        "titleHighlight": "Seconds",
+        "subtitle": "Experience the fastest food tracking workflow ever built.",
+        "steps": {
+            "input": {
+                "title": "Snap or Describe",
+                "description": "Take a photo of your meal or simply type what you're eating. No database searching required.",
+                "mock": {
+                    "tap": "Tap to take photo",
+                    "snap": "Snap a meal",
+                    "type": "Or type to search..."
+                }
+            },
+            "analysis": {
+                "title": "Instant Analysis",
+                "description": "Gemini AI breaks down ingredients, estimates portions, and logs calories instantly to your dashboard."
+            },
+            "progress": {
+                "title": "Track Progress",
+                "description": "Get detailed weekly breakdown and coaching tips to stay on track with your health goals."
+            }
+        }
+    },
+    "aiCoach": {
+        "badge": "Meet CalCoach",
+        "title": "Your Personal",
+        "titleHighlight": "AI Nutritionist",
+        "description": "Imagine having a nutritionist in your pocket 24/7. CalCoach learns your habits and guides you to better choices without the judgment.",
+        "points": {
+            "analysis": "Instantly analyzes your meals and habits",
+            "plans": "Generates personalized workout & meal plans",
+            "answers": "Answers any health question, anytime"
+        },
+        "mock": {
+            "status": "Your Personal Coach",
+            "input": "Ask your coach...",
+            "chat": {
+                "welcome": "👋 **Hi there! I'm Cal Coach.**\n\nHow can I help you today?",
+                "user1": "Analyze my recent nutrition",
+                "ai1": "I've analyzed your recent logs. You're averaging **2,100 calories** with a **40/30/30** macro split. \n\nGreat job hitting your protein targets! 💪 You might want to increase fiber intake slightly."
+            },
+            "cards": {
+                "nutrition": "Analyze Nutrition",
+                "nutritionDesc": "Get insights on your recent eating habits",
+                "workout": "Workout Plan",
+                "workoutDesc": "Create a personalized fitness routine",
+                "tdee": "Calculate TDEE",
+                "tdeeDesc": "Find out your daily energy expenditure"
+            }
+        }
+    },
+    "workout": {
+        "badge": "Complete Fitness Tracking",
+        "title": "Smart Workout",
+        "titleHighlight": "Integration",
+        "description": "Stop switching between apps. Seamlessly connect your nutrition data with your training for a holistic view of your health.",
+        "features": {
+            "plans": {
+                "title": "Custom Plans",
+                "desc": "Build routines or get AI-generated plans."
+            },
+            "tracking": {
+                "title": "Detailed Tracking",
+                "desc": "Log sets, reps, and weights with ease."
+            }
+        },
+        "mock": {
+            "status": "Your Training",
+            "title": "Workout Plan",
+            "today": "Today's Workout",
+            "chest": "Chest & Triceps",
+            "completed": "Completed",
+            "sets": "Sets",
+            "reps": "Reps"
+        }
+    },
+    "why": {
+        "title": "Why Choose",
+        "titleHighlight": "SnapCal AI?",
+        "subtitle": "The premium way to track nutrition without the hassle",
+        "benefits": {
+            "frictionless": {
+                "title": "Frictionless",
+                "description": "No more searching through endless databases for 'medium banana.' Just snap and go.",
+                "stat": "10x Faster"
+            },
+            "transparent": {
+                "title": "Transparent",
+                "description": "Get an 'Ingredient Receipt' so you can see exactly how your total was calculated.",
+                "stat": "100% Clear"
+            },
+            "adaptive": {
+                "title": "Adaptive",
+                "description": "SnapCal learns from your corrections to provide even better estimates over time.",
+                "stat": "Always Learning"
+            },
+            "secure": {
+                "title": "Secure",
+                "description": "Your data is encrypted and safely stored in the cloud with enterprise-grade security.",
+                "stat": "Bank-Level Security"
+            },
+            "time": {
+                "title": "Time-Saving",
+                "description": "Track your meals in seconds instead of minutes. More time for what matters.",
+                "stat": "< 5 Seconds"
+            },
+            "accurate": {
+                "title": "Accurate",
+                "description": "Powered by Google's Gemini AI for industry-leading accuracy in nutrition estimation.",
+                "stat": "98% Accuracy"
+            }
+        },
+        "footer": {
+            "title": "Join 50,000+ Users Eating Well",
+            "description": "Whether you're a fitness enthusiast or just trying to eat healthier, SnapCal provides instant, accurate nutritional insights without the tedious manual logging."
+        }
+    },
+    "cta": {
+        "title": "Ready to Transform Your",
+        "titleHighlight": "Eating Journey?",
+        "description": "Start eating well with AI-powered nutrition insights. Join thousands who've embraced smarter tracking.",
+        "points": [
+            "No credit card required to start",
+            "Free forever for basic features",
+            "Cancel anytime, no questions asked"
+        ],
+        "button": "Start Eating Well Free",
+        "worldwide": "Available Worldwide",
+        "goal": {
+            "title": "Daily Goal",
+            "remaining": "kcal remaining",
+            "status": "On Track! 🎯"
+        }
+    },
+    "footer": {
+        "rights": "© 2026 SnapCal AI. All rights reserved. Powered by Google Gemini AI.",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Service",
+        "contact": "Contact"
+    }
+}

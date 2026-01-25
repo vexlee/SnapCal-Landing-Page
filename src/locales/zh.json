@@ -1,0 +1,226 @@
+{
+    "header": {
+        "features": "功能",
+        "howItWorks": "工作原理",
+        "whySnapCal": "为何选择",
+        "getStarted": "立即开始"
+    },
+    "hero": {
+        "badge": "由 Google Gemini AI 提供支持",
+        "titlePrefix": "拍照追踪",
+        "description": "您的个人高级营养助手，让健康饮食变得轻而易举。利用 AI 智能将每一餐转化为深入的营养洞察。",
+        "stats": {
+            "meals": "已分析餐食",
+            "accuracy": "准确率",
+            "users": "活跃用户"
+        },
+        "analysis": {
+            "title": "餐食分析",
+            "protein": "蛋白质",
+            "carbs": "碳水",
+            "fat": "脂肪"
+        }
+    },
+    "features": {
+        "title": "记录您所摄入的",
+        "titleHighlight": "每一餐",
+        "subtitle": "借助 SnapCal AI 的力量，彻底改变您的营养追踪方式",
+        "items": {
+            "analysis": {
+                "title": "AI 驱动的餐食分析",
+                "description": "即时照片识别或自然语言输入。SnapCal AI 能够识别食物、分解成分、估算份量并计算热量与宏量营养素。",
+                "list": [
+                    "即时照片识别",
+                    "自然语言输入",
+                    "精准手动校正"
+                ]
+            },
+            "coach": {
+                "title": "AI 健康教练",
+                "description": "您的 24/7 私人健康指南。与 CalCoach 交流，获取个性化建议、动力支持及营养问题解答。",
+                "list": [
+                    "24/7 在线支持",
+                    "个性化建议",
+                    "智能健康提示"
+                ]
+            },
+            "dashboard": {
+                "title": "智能控制面板",
+                "description": "实时进度追踪与动态视觉反馈。随着接近每日摄入限制，指示条会从绿色变为橙色再到红色。",
+                "list": [
+                    "实时记录追踪",
+                    "7天趋势分析",
+                    "智能预警系统"
+                ]
+            },
+            "workout": {
+                "title": "运动集成",
+                "description": "将健身数据与营养追踪无缝结合。创建自定义锻炼计划，记录组数、次数和进步情况。",
+                "list": [
+                    "自定义健身计划",
+                    "运动项目库",
+                    "进步趋势追踪"
+                ]
+            },
+            "recipe": {
+                "title": "食谱与餐食计算器",
+                "description": "输入食材和份量，获取完整的单份营养细分——非常适合家庭烹饪和备餐计划。",
+                "list": [
+                    "食谱深度解析",
+                    "单份营养细分",
+                    "备餐方案优化"
+                ]
+            },
+            "cloud": {
+                "title": "历史记录与云端同步",
+                "description": "详细记录您摄入的每一顿餐食，按日期整理。数据安全存储，随时随地均可访问。",
+                "list": [
+                    "详细饮食日志",
+                    "云端自动同步",
+                    "多设备无缝访问"
+                ]
+            }
+        }
+    },
+    "howItWorks": {
+        "title": "从拍照到营养分析仅需",
+        "titleHighlight": "数秒",
+        "subtitle": "体验有史以来最快速的食物追踪工作流。",
+        "steps": {
+            "input": {
+                "title": "拍照或描述",
+                "description": "拍下您的餐食或直接输入内容。无需在冗长的数据库中搜索。",
+                "mock": {
+                    "tap": "点击拍摄照片",
+                    "snap": "拍摄餐食",
+                    "type": "或输入搜索..."
+                }
+            },
+            "analysis": {
+                "title": "即时分析",
+                "description": "Gemini AI 会立即分解食材、估算份量并将热量记录到您的控制面板中。"
+            },
+            "progress": {
+                "title": "追踪进度",
+                "description": "获取详细的每周报告和教练建议，确保您始终朝着健康目标前进。"
+            }
+        }
+    },
+    "aiCoach": {
+        "badge": "认识 CalCoach",
+        "title": "您的私人",
+        "titleHighlight": "AI 营养师",
+        "description": "想象一下兜里揣着一位 24/7 全天候待命的营养师。CalCoach 会学习您的习惯，引导您做出更健康的选择，且毫无评判感。",
+        "points": {
+            "analysis": "即时分析您的餐食与习惯",
+            "plans": "生成个性化健身与饮食计划",
+            "answers": "随时解答任何健康疑问"
+        },
+        "mock": {
+            "status": "您的私人教练",
+            "input": "向教练提问...",
+            "chat": {
+                "welcome": "👋 **你好！我是 Cal Coach。**\n\n今天有什么可以帮到你的？",
+                "user1": "分析我最近的营养状况",
+                "ai1": "我分析了你最近的记录。你平均每天摄入 **2,100 大卡**，宏量营养素比例为 **40/30/30**。\n\n蛋白质达标做得很好！💪 你可以尝试稍微增加点纤维摄入量。"
+            },
+            "cards": {
+                "nutrition": "营养分析",
+                "nutritionDesc": "获取近期饮食习惯的深入洞察",
+                "workout": "健身计划",
+                "workoutDesc": "制定个性化的运动方案",
+                "tdee": "计算 TDEE",
+                "tdeeDesc": "了解您的每日能量总消耗"
+            }
+        }
+    },
+    "workout": {
+        "badge": "全方位健身追踪",
+        "title": "智能运动",
+        "titleHighlight": "无缝集成",
+        "description": "无需在多个应用间切换。将您的营养数据与训练数据整合，全面掌握健康动态。",
+        "features": {
+            "plans": {
+                "title": "自定义计划",
+                "desc": "制定日常方案或获取 AI 生成的建议计划。"
+            },
+            "tracking": {
+                "title": "详细追踪",
+                "desc": "轻松记录运动组数、次数和重量。"
+            }
+        },
+        "mock": {
+            "status": "您的训练",
+            "title": "健身计划",
+            "today": "今日锻炼",
+            "chest": "胸部与三头肌",
+            "completed": "已完成",
+            "sets": "组项",
+            "reps": "次数"
+        }
+    },
+    "why": {
+        "title": "为何选择",
+        "titleHighlight": "SnapCal AI?",
+        "subtitle": "无需繁琐操作的高级营养追踪方式",
+        "benefits": {
+            "frictionless": {
+                "title": "无门槛",
+                "description": "不再需要在数据库中反复搜索“中等大小的香蕉”。拍照即可搞定。",
+                "stat": "提速 10 倍"
+            },
+            "transparent": {
+                "title": "透明化",
+                "description": "提供“食材清单”，让您清楚看到每一项热量的计算来源。",
+                "stat": "100% 清晰"
+            },
+            "adaptive": {
+                "title": "自适应",
+                "description": "SnapCal 会学习您的手动校正，随着时间的推移提供更准确的估算。",
+                "stat": "持续迭代"
+            },
+            "secure": {
+                "title": "安全性",
+                "description": "您的数据经过加密并安全存储在云端，具备企业级安全保障。",
+                "stat": "银行级安全"
+            },
+            "time": {
+                "title": "省时间",
+                "description": "以秒级速度记录餐食。把更多时间留给真正重要的事情。",
+                "stat": "< 5 秒"
+            },
+            "accurate": {
+                "title": "准确性",
+                "description": "由 Google Gemini AI 驱动，提供业界领先的营养估算准确率。",
+                "stat": "98% 准确率"
+            }
+        },
+        "footer": {
+            "title": "加入 50,000+ 健康饮食用户的行列",
+            "description": "无论您是健身爱好者还是单纯想吃得更健康，SnapCal 都能为您提供即时、准确的营养洞察，告别乏味的手动记录。"
+        }
+    },
+    "cta": {
+        "title": "准备好开启您的",
+        "titleHighlight": "健康饮食之旅吗？",
+        "description": "利用 AI 驱动的营养洞察开启健康饮食。加入成千上万选择智能追踪的用户行列。",
+        "points": [
+            "无需信用卡即可开始",
+            "基础功能永久免费",
+            "随时取消，无需任何理由"
+        ],
+        "button": "免费开启健康生活",
+        "worldwide": "全球范围可用",
+        "goal": {
+            "title": "每日目标",
+            "remaining": "大卡剩余",
+            "status": "状态极佳! 🎯"
+        }
+    },
+    "footer": {
+        "rights": "© 2026 SnapCal AI. 保留所有权利。由 Google Gemini AI 提供支持。",
+        "privacy": "隐私政策",
+        "terms": "服务条款",
+        "contact": "联系我们"
+    }
+}

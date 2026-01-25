@@ -1,52 +1,56 @@
 import { motion } from "motion/react";
 import { Zap, Eye, TrendingUp, Shield, Clock, Target } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
-const benefits = [
+const getBenefits = (t: any) => [
   {
     icon: Zap,
-    title: "Frictionless",
-    description: "No more searching through endless databases for 'medium banana.' Just snap and go.",
-    stat: "10x Faster",
+    title: t('why.benefits.frictionless.title'),
+    description: t('why.benefits.frictionless.description'),
+    stat: t('why.benefits.frictionless.stat'),
     color: "from-purple-600 to-violet-600"
   },
   {
     icon: Eye,
-    title: "Transparent",
-    description: "Get an 'Ingredient Receipt' so you can see exactly how your total was calculated.",
-    stat: "100% Clear",
+    title: t('why.benefits.transparent.title'),
+    description: t('why.benefits.transparent.description'),
+    stat: t('why.benefits.transparent.stat'),
     color: "from-violet-600 to-fuchsia-600"
   },
   {
     icon: TrendingUp,
-    title: "Adaptive",
-    description: "SnapCal learns from your corrections to provide even better estimates over time.",
-    stat: "Always Learning",
+    title: t('why.benefits.adaptive.title'),
+    description: t('why.benefits.adaptive.description'),
+    stat: t('why.benefits.adaptive.stat'),
     color: "from-emerald-500 to-teal-600"
   },
   {
     icon: Shield,
-    title: "Secure",
-    description: "Your data is encrypted and safely stored in the cloud with enterprise-grade security.",
-    stat: "Bank-Level Security",
+    title: t('why.benefits.secure.title'),
+    description: t('why.benefits.secure.description'),
+    stat: t('why.benefits.secure.stat'),
     color: "from-blue-500 to-indigo-600"
   },
   {
     icon: Clock,
-    title: "Time-Saving",
-    description: "Track your meals in seconds instead of minutes. More time for what matters.",
-    stat: "< 5 Seconds",
+    title: t('why.benefits.time.title'),
+    description: t('why.benefits.time.description'),
+    stat: t('why.benefits.time.stat'),
     color: "from-amber-500 to-orange-600"
   },
   {
     icon: Target,
-    title: "Accurate",
-    description: "Powered by Google's Gemini AI for industry-leading accuracy in nutrition estimation.",
-    stat: "98% Accuracy",
+    title: t('why.benefits.accurate.title'),
+    description: t('why.benefits.accurate.description'),
+    stat: t('why.benefits.accurate.stat'),
     color: "from-pink-500 to-rose-600"
   }
 ];
 
 export function WhySnapCal() {
+  const { t } = useTranslation();
+  const benefitsList = getBenefits(t);
+
   return (
     <section id="why" className="py-20 px-6 relative overflow-hidden">
       {/* Background decoration */}
@@ -61,18 +65,18 @@ export function WhySnapCal() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            Why Choose{" "}
+            {t('why.title')}{" "}
             <span className="bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent">
-              SnapCal AI?
+              {t('why.titleHighlight')}
             </span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            The premium way to track nutrition without the hassle
+            {t('why.subtitle')}
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {benefits.map((benefit, index) => {
+          {benefitsList.map((benefit, index) => {
             const Icon = benefit.icon;
             return (
               <motion.div
@@ -115,10 +119,10 @@ export function WhySnapCal() {
 
           <div className="relative z-10 text-center max-w-3xl mx-auto">
             <h3 className="text-3xl md:text-4xl font-bold mb-4">
-              Join 50,000+ Users Eating Well
+              {t('why.footer.title')}
             </h3>
             <p className="text-xl text-white/90 mb-8">
-              Whether you're a fitness enthusiast or just trying to eat healthier, SnapCal provides instant, accurate nutritional insights without the tedious manual logging.
+              {t('why.footer.description')}
             </p>
 
           </div>

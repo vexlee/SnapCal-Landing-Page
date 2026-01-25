@@ -1,72 +1,49 @@
 import { motion } from "motion/react";
 import { Camera, BarChart3, Calculator, History, Zap, Sparkles } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
-const features = [
+const getFeatures = (t: any) => [
   {
     icon: Camera,
-    title: "AI-Powered Food Analysis",
-    description: "Instant photo recognition or natural text entry. SnapCal's AI identifies food items, breaks down ingredients, estimates portions, and calculates calories & macros.",
+    title: t('features.items.analysis.title'),
+    description: t('features.items.analysis.description'),
     color: "from-purple-600 to-violet-600",
-    features: [
-      "Instant photo recognition",
-      "Natural text entry",
-      "Precision correction mode"
-    ]
+    features: t('features.items.analysis.list', { returnObjects: true }) as string[]
   },
   {
-    icon: Zap, // Using Zap for AI Coach as it represents speed/intelligence, or maybe Sparkles? Let's check imports.
-    title: "AI Health Coach",
-    description: "Your personal 24/7 wellness guide. Chat with CalCoach for personalized advice, motivation, and answers to your nutrition questions.",
+    icon: Zap,
+    title: t('features.items.coach.title'),
+    description: t('features.items.coach.description'),
     color: "from-pink-500 to-rose-600",
-    features: [
-      "24/7 Chat support",
-      "Personalized advice",
-      "Smart suggestions"
-    ]
+    features: t('features.items.coach.list', { returnObjects: true }) as string[]
   },
   {
     icon: BarChart3,
-    title: "Smart Dashboard",
-    description: "Real-time progress tracking with dynamic visual indicators. Watch your intake change from green to orange to red as you approach your daily limit.",
+    title: t('features.items.dashboard.title'),
+    description: t('features.items.dashboard.description'),
     color: "from-emerald-500 to-teal-600",
-    features: [
-      "Real-time progress tracking",
-      "7-day trend analysis",
-      "Smart alert system"
-    ]
+    features: t('features.items.dashboard.list', { returnObjects: true }) as string[]
   },
   {
-    icon: Sparkles, // Using Sparkles for Workout as we don't have Dumbbell imported yet. I should import Dumbbell or Activity.
-    title: "Workout Integration",
-    description: "Seamlessly track your fitness alongside your nutrition. Create custom workout plans and track your sets, reps, and progress.",
+    icon: Sparkles,
+    title: t('features.items.workout.title'),
+    description: t('features.items.workout.description'),
     color: "from-blue-500 to-indigo-600",
-    features: [
-      "Custom workout planner",
-      "Exercise library",
-      "Progress tracking"
-    ]
+    features: t('features.items.workout.list', { returnObjects: true }) as string[]
   },
   {
     icon: Calculator,
-    title: "Recipe & Meal Calculator",
-    description: "Input ingredients and servings to get complete nutritional breakdown per serving—perfect for home cooks and meal preppers.",
+    title: t('features.items.recipe.title'),
+    description: t('features.items.recipe.description'),
     color: "from-violet-500 to-fuchsia-600",
-    features: [
-      "Recipe analysis",
-      "Per-serving breakdown",
-      "Meal prep optimization"
-    ]
+    features: t('features.items.recipe.list', { returnObjects: true }) as string[]
   },
   {
     icon: History,
-    title: "History & Cloud Sync",
-    description: "Keep a detailed log of everything you've eaten, organized by date. Your data is securely stored and accessible anytime, anywhere.",
+    title: t('features.items.cloud.title'),
+    description: t('features.items.cloud.description'),
     color: "from-amber-500 to-orange-600",
-    features: [
-      "Detailed food log",
-      "Cloud synchronization",
-      "Cross-device access"
-    ]
+    features: t('features.items.cloud.list', { returnObjects: true }) as string[]
   }
 ];
 
@@ -92,6 +69,9 @@ const itemVariants = {
 };
 
 export function Features() {
+  const { t } = useTranslation();
+  const featuresList = getFeatures(t);
+
   return (
     <section id="features" className="py-20 px-6 relative overflow-hidden">
       {/* Background decoration */}
@@ -107,13 +87,13 @@ export function Features() {
         >
 
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            Everything You Eat is{" "}
+            {t('features.title')}{" "}
             <span className="bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent">
-              On Track
+              {t('features.titleHighlight')}
             </span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Leverage the power of SnapCal AI to transform how you track nutrition
+            {t('features.subtitle')}
           </p>
         </motion.div>
 
@@ -124,7 +104,7 @@ export function Features() {
           viewport={{ once: true }}
           className="grid md:grid-cols-2 gap-8"
         >
-          {features.map((feature, index) => {
+          {featuresList.map((feature, index) => {
             const Icon = feature.icon;
             return (
               <motion.div

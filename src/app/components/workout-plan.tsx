@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Dumbbell, Calendar, ChevronLeft, ChevronRight, CheckCircle2, Circle, Trophy, ArrowRight, Plus } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 // Mock Data
 const exercises = [
@@ -13,6 +14,7 @@ const days = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 const dates = Array.from({ length: 31 }, (_, i) => i + 1);
 
 export function WorkoutPlan() {
+    const { t } = useTranslation();
     return (
         <section className="py-24 px-6 relative overflow-hidden bg-[#161821]">
             {/* Background decoration */}
@@ -44,8 +46,8 @@ export function WorkoutPlan() {
                         {/* Header */}
                         <div className="px-6 pb-6 pt-2 flex justify-between items-end">
                             <div>
-                                <p className="text-gray-500 text-[10px] font-bold uppercase tracking-widest mb-1">Your Training</p>
-                                <h1 className="text-2xl font-extrabold text-white">Workout Plan</h1>
+                                <p className="text-gray-500 text-[10px] font-bold uppercase tracking-widest mb-1">{t('workout.mock.status')}</p>
+                                <h1 className="text-2xl font-extrabold text-white">{t('workout.mock.title')}</h1>
                             </div>
                             <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center text-white shadow-sm">
                                 <Dumbbell size={18} />
@@ -81,12 +83,12 @@ export function WorkoutPlan() {
                         <div className="flex-1 bg-[#1a1c26] rounded-t-[32px] p-6 overflow-hidden flex flex-col">
                             <div className="flex justify-between items-center mb-4">
                                 <div>
-                                    <h2 className="text-lg font-extrabold text-white">Today's Workout</h2>
-                                    <p className="text-[10px] text-gray-500 font-bold uppercase mt-0.5">Chest & Triceps</p>
+                                    <h2 className="text-lg font-extrabold text-white">{t('workout.mock.today')}</h2>
+                                    <p className="text-[10px] text-gray-500 font-bold uppercase mt-0.5">{t('workout.mock.chest')}</p>
                                 </div>
                                 <div className="text-right">
                                     <p className="text-xl font-extrabold text-blue-400">50%</p>
-                                    <p className="text-[10px] text-gray-500 uppercase font-bold">Completed</p>
+                                    <p className="text-[10px] text-gray-500 uppercase font-bold">{t('workout.mock.completed')}</p>
                                 </div>
                             </div>
 
@@ -106,8 +108,8 @@ export function WorkoutPlan() {
                                             <div>
                                                 <h3 className={`font-bold text-sm mb-1 ${ex.completed ? 'text-gray-400 line-through' : 'text-white'}`}>{ex.name}</h3>
                                                 <div className="flex gap-3 text-[10px] text-gray-500 font-medium">
-                                                    <span>Sets: <span className="text-gray-300">{ex.sets}</span></span>
-                                                    <span>Reps: <span className="text-gray-300">{ex.reps}</span></span>
+                                                    <span>{t('workout.mock.sets')}: <span className="text-gray-300">{ex.sets}</span></span>
+                                                    <span>{t('workout.mock.reps')}: <span className="text-gray-300">{ex.reps}</span></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -134,18 +136,18 @@ export function WorkoutPlan() {
                 >
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-semibold text-sm mb-6">
                         <Trophy className="w-4 h-4" />
-                        <span>Complete Fitness Tracking</span>
+                        <span>{t('workout.badge')}</span>
                     </div>
 
                     <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-                        Smart Workout <br />
+                        {t('workout.title')} <br />
                         <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                            Integration
+                            {t('workout.titleHighlight')}
                         </span>
                     </h2>
 
                     <p className="text-xl text-gray-400 mb-8 leading-relaxed">
-                        Stop switching between apps. Seamlessly connect your nutrition data with your training for a holistic view of your health.
+                        {t('workout.description')}
                     </p>
 
                     <div className="space-y-6 mb-10">
@@ -154,8 +156,8 @@ export function WorkoutPlan() {
                                 <Calendar className="w-5 h-5 text-blue-400" />
                             </div>
                             <div>
-                                <h3 className="text-white font-bold mb-1">Custom Plans</h3>
-                                <p className="text-gray-400 text-sm">Build routines or get AI-generated plans.</p>
+                                <h3 className="text-white font-bold mb-1">{t('workout.features.plans.title')}</h3>
+                                <p className="text-gray-400 text-sm">{t('workout.features.plans.desc')}</p>
                             </div>
                         </div>
                         <div className="flex gap-4">
@@ -163,8 +165,8 @@ export function WorkoutPlan() {
                                 <Dumbbell className="w-5 h-5 text-cyan-400" />
                             </div>
                             <div>
-                                <h3 className="text-white font-bold mb-1">Detailed Tracking</h3>
-                                <p className="text-gray-400 text-sm">Log sets, reps, and weights with ease.</p>
+                                <h3 className="text-white font-bold mb-1">{t('workout.features.tracking.title')}</h3>
+                                <p className="text-gray-400 text-sm">{t('workout.features.tracking.desc')}</p>
                             </div>
                         </div>
                     </div>

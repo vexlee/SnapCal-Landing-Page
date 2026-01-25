@@ -1,7 +1,15 @@
-import { Camera } from "lucide-react";
+import { Camera, Globe } from "lucide-react";
 import { motion } from "motion/react";
+import { useTranslation } from "react-i18next";
 
 export function Header() {
+  const { t, i18n } = useTranslation();
+
+  const toggleLanguage = () => {
+    const nextLang = i18n.language.startsWith('zh') ? 'en' : 'zh';
+    i18n.changeLanguage(nextLang);
+  };
+
   return (
     <motion.header
       initial={{ y: -100, opacity: 0 }}
@@ -20,21 +28,33 @@ export function Header() {
         </div>
         <nav className="hidden md:flex items-center gap-8">
           <a href="#features" className="text-gray-300 hover:text-purple-400 transition-colors">
-            Features
+            {t('header.features')}
           </a>
           <a href="#how-it-works" className="text-gray-300 hover:text-purple-400 transition-colors">
-            How It Works
+            {t('header.howItWorks')}
           </a>
           <a href="#why" className="text-gray-300 hover:text-purple-400 transition-colors">
-            Why SnapCal
+            {t('header.whySnapCal')}
           </a>
         </nav>
-        <a
-          href="https://snap-cal-ai-mu.vercel.app/"
-          className="px-6 py-2 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-[24px] hover:shadow-lg hover:shadow-purple-500/50 transition-all cursor-pointer"
-        >
-          Get Started
-        </a>
+        <div className="flex items-center gap-4">
+          <button
+            onClick={toggleLanguage}
+            className="p-2 text-gray-400 hover:text-purple-400 transition-colors cursor-pointer flex items-center gap-2 group"
+            title={i18n.language.startsWith('zh') ? 'Switch to English' : '切换至中文'}
+          >
+            <Globe className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+            <span className="text-sm font-medium hidden sm:inline">
+              {i18n.language.startsWith('zh') ? 'EN' : '中'}
+            </span>
+          </button>
+          <a
+            href="https://snap-cal-ai-mu.vercel.app/"
+            className="px-6 py-2 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-[24px] hover:shadow-lg hover:shadow-purple-500/50 transition-all cursor-pointer text-sm font-medium"
+          >
+            {t('header.getStarted')}
+          </a>
+        </div>
       </div>
     </motion.header>
   );

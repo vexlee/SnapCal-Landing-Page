@@ -1,32 +1,37 @@
 import { motion } from "motion/react";
 import { Sparkles, Send, Bot, ArrowRight, Loader2 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 // Mock data to simulate the real app state
-const chatMessages = [
+const getChatMessages = (t: any) => [
     {
         id: 'welcome',
         role: 'assistant',
-        content: "👋 **Hi there! I'm Cal Coach.**\n\nHow can I help you today?"
+        content: t('aiCoach.mock.chat.welcome')
     },
     {
         id: 'user-1',
         role: 'user',
-        content: "Analyze my recent nutrition"
+        content: t('aiCoach.mock.chat.user1')
     },
     {
         id: 'ai-1',
         role: 'assistant',
-        content: "I've analyzed your recent logs. You're averaging **2,100 calories** with a **40/30/30** macro split. \n\nGreat job hitting your protein targets! \uD83D\uDCAA You might want to increase fiber intake slightly."
+        content: t('aiCoach.mock.chat.ai1')
     }
 ];
 
-const suggestionCards = [
-    { title: "Analyze Nutrition", desc: "Get insights on your recent eating habits", icon: "📊", color: "from-blue-500/30 to-purple-500/30", baseBg: "bg-blue-500/5", iconBg: "bg-blue-500/10", iconBorder: "border-blue-500/20" },
-    { title: "Workout Plan", desc: "Create a personalized fitness routine", icon: "💪", color: "from-purple-500/30 to-indigo-500/30", baseBg: "bg-purple-500/5", iconBg: "bg-purple-500/10", iconBorder: "border-purple-500/20" },
-    { title: "Calculate TDEE", desc: "Find out your daily energy expenditure", icon: "🔥", color: "from-orange-500/30 to-purple-500/30", baseBg: "bg-orange-500/5", iconBg: "bg-orange-500/10", iconBorder: "border-orange-500/20" },
+const getSuggestionCards = (t: any) => [
+    { title: t('aiCoach.mock.cards.nutrition'), desc: t('aiCoach.mock.cards.nutritionDesc'), icon: "📊", color: "from-blue-500/30 to-purple-500/30", baseBg: "bg-blue-500/5", iconBg: "bg-blue-500/10", iconBorder: "border-blue-500/20" },
+    { title: t('aiCoach.mock.cards.workout'), desc: t('aiCoach.mock.cards.workoutDesc'), icon: "💪", color: "from-purple-500/30 to-indigo-500/30", baseBg: "bg-purple-500/5", iconBg: "bg-purple-500/10", iconBorder: "border-purple-500/20" },
+    { title: t('aiCoach.mock.cards.tdee'), desc: t('aiCoach.mock.cards.tdeeDesc'), icon: "🔥", color: "from-orange-500/30 to-purple-500/30", baseBg: "bg-orange-500/5", iconBg: "bg-orange-500/10", iconBorder: "border-orange-500/20" },
 ];
 
 export function AiCoach() {
+    const { t } = useTranslation();
+    const chatMessages = getChatMessages(t);
+    const suggestionCards = getSuggestionCards(t);
+
     return (
         <section className="py-24 px-6 relative overflow-hidden">
             {/* Background decoration */}
@@ -43,32 +48,32 @@ export function AiCoach() {
                 >
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 font-semibold text-sm mb-6">
                         <Bot className="w-4 h-4" />
-                        <span>Meet CalCoach</span>
+                        <span>{t('aiCoach.badge')}</span>
                     </div>
 
                     <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-                        Your Personal <br />
+                        {t('aiCoach.title')} <br />
                         <span className="bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent">
-                            AI Nutritionist
+                            {t('aiCoach.titleHighlight')}
                         </span>
                     </h2>
 
                     <p className="text-xl text-gray-400 mb-8 leading-relaxed max-w-xl">
-                        Imagine having a nutritionist in your pocket 24/7. CalCoach learns your habits and guides you to better choices without the judgment.
+                        {t('aiCoach.description')}
                     </p>
 
                     <div className="flex flex-col gap-4 mb-10">
                         <div className="flex items-center gap-4 text-gray-300">
                             <div className="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400"><Sparkles size={16} /></div>
-                            <span>Instantly analyzes your meals and habits</span>
+                            <span>{t('aiCoach.points.analysis')}</span>
                         </div>
                         <div className="flex items-center gap-4 text-gray-300">
                             <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400"><Bot size={16} /></div>
-                            <span>Generates personalized workout & meal plans</span>
+                            <span>{t('aiCoach.points.plans')}</span>
                         </div>
                         <div className="flex items-center gap-4 text-gray-300">
                             <div className="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center text-green-400"><ArrowRight size={16} /></div>
-                            <span>Answers any health question, anytime</span>
+                            <span>{t('aiCoach.points.answers')}</span>
                         </div>
                     </div>
 
@@ -99,7 +104,7 @@ export function AiCoach() {
                         {/* App Header */}
                         <div className="px-6 pb-4 pt-2 flex justify-between items-end border-b border-white/5">
                             <div>
-                                <p className="text-gray-500 text-[10px] font-bold uppercase tracking-widest mb-1">Your Personal Coach</p>
+                                <p className="text-gray-500 text-[10px] font-bold uppercase tracking-widest mb-1">{t('aiCoach.mock.status')}</p>
                                 <h1 className="text-2xl font-extrabold text-white">Cal Coach</h1>
                             </div>
                             <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-violet-700 rounded-full flex items-center justify-center text-white shadow-sm">
@@ -141,7 +146,7 @@ export function AiCoach() {
                         {/* Input Area */}
                         <div className="p-4 bg-[#1a1c26] border-t border-white/5">
                             <div className="bg-[#0f1016] rounded-[24px] p-2 border border-white/5 flex gap-2 items-center pl-4">
-                                <span className="text-gray-500 text-sm flex-1">Ask your coach...</span>
+                                <span className="text-gray-500 text-sm flex-1">{t('aiCoach.mock.input')}</span>
                                 <div className="w-9 h-9 bg-purple-600 rounded-[18px] flex items-center justify-center text-white shadow-lg shadow-purple-900/40">
                                     <Send size={16} />
                                 </div>

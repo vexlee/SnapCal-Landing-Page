@@ -1,8 +1,10 @@
 import { motion } from "motion/react";
 import { Camera, Smartphone, ArrowRight, Sparkles } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { useTranslation } from "react-i18next";
 
 export function CTA() {
+  const { t } = useTranslation();
   return (
     <section className="py-20 px-6 relative overflow-hidden">
       {/* Background decoration */}
@@ -17,34 +19,24 @@ export function CTA() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-              Ready to Transform Your{" "}
+              {t('cta.title')}{" "}
               <span className="bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent">
-                Eating Journey?
+                {t('cta.titleHighlight')}
               </span>
             </h2>
             <p className="text-xl text-gray-400 mb-8 leading-relaxed">
-              Start eating well with AI-powered nutrition insights. Join thousands who've embraced smarter tracking.
+              {t('cta.description')}
             </p>
 
             <div className="space-y-4 mb-8">
-              <div className="flex items-center gap-3">
-                <div className="w-6 h-6 bg-purple-500/20 backdrop-blur-sm border border-purple-400/30 rounded-full flex items-center justify-center flex-shrink-0">
-                  <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+              {(t('cta.points', { returnObjects: true }) as string[]).map((point, idx) => (
+                <div key={idx} className="flex items-center gap-3">
+                  <div className="w-6 h-6 bg-purple-500/20 backdrop-blur-sm border border-purple-400/30 rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                  </div>
+                  <span className="text-gray-300">{point}</span>
                 </div>
-                <span className="text-gray-300">No credit card required to start</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-6 h-6 bg-purple-500/20 backdrop-blur-sm border border-purple-400/30 rounded-full flex items-center justify-center flex-shrink-0">
-                  <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
-                </div>
-                <span className="text-gray-300">Free forever for basic features</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-6 h-6 bg-purple-500/20 backdrop-blur-sm border border-purple-400/30 rounded-full flex items-center justify-center flex-shrink-0">
-                  <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
-                </div>
-                <span className="text-gray-300">Cancel anytime, no questions asked</span>
-              </div>
+              ))}
             </div>
 
             <motion.a
@@ -54,7 +46,7 @@ export function CTA() {
               className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-[28px] font-semibold shadow-lg shadow-purple-500/40 hover:shadow-xl hover:shadow-purple-500/60 transition-all flex items-center justify-center gap-2 cursor-pointer"
             >
               <Camera className="w-5 h-5" />
-              Start Eating Well Free
+              {t('cta.button')}
               <ArrowRight className="w-5 h-5" />
             </motion.a>
 
@@ -64,7 +56,7 @@ export function CTA() {
                 <span>iOS & Android</span>
               </div>
               <div className="w-px h-4 bg-white/10"></div>
-              <div>Available Worldwide</div>
+              <div>{t('cta.worldwide')}</div>
             </div>
           </motion.div>
 
@@ -96,7 +88,7 @@ export function CTA() {
                   <Sparkles className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <div className="text-sm text-gray-400">Daily Goal</div>
+                  <div className="text-sm text-gray-400">{t('cta.goal.title')}</div>
                   <div className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent">1,847 / 2,000</div>
                 </div>
               </div>
@@ -110,8 +102,8 @@ export function CTA() {
                 ></motion.div>
               </div>
               <div className="mt-3 flex items-center justify-between">
-                <div className="text-xs text-gray-400">153 kcal remaining</div>
-                <div className="text-xs font-semibold text-emerald-400">On Track! 🎯</div>
+                <div className="text-xs text-gray-400">153 {t('cta.goal.remaining')}</div>
+                <div className="text-xs font-semibold text-emerald-400">{t('cta.goal.status')}</div>
               </div>
             </motion.div>
           </motion.div>
@@ -126,12 +118,12 @@ export function CTA() {
               <span className="font-semibold text-gray-200">SnapCal AI</span>
             </div>
             <p className="text-sm">
-              © 2026 SnapCal AI. All rights reserved. Powered by Google Gemini AI.
+              {t('footer.rights')}
             </p>
             <div className="mt-4 flex items-center justify-center gap-6 text-sm">
-              <a href="#" className="hover:text-purple-400 transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-purple-400 transition-colors">Terms of Service</a>
-              <a href="#" className="hover:text-purple-400 transition-colors">Contact</a>
+              <a href="#" className="hover:text-purple-400 transition-colors">{t('footer.privacy')}</a>
+              <a href="#" className="hover:text-purple-400 transition-colors">{t('footer.terms')}</a>
+              <a href="#" className="hover:text-purple-400 transition-colors">{t('footer.contact')}</a>
             </div>
           </div>
         </footer>
